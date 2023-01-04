@@ -1,0 +1,15 @@
+.nav{
+  height: 70px;
+}
+.links{
+  display: flex;
+  align-items: center;
+
+}
+.links a{
+  position: relative;
+  left: 1290px;
+}
+*{
+  text-decoration:none;
+}

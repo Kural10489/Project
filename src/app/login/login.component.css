@@ -1,0 +1,17 @@
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  border: .1px solid rgb(226, 220, 220);
+}
+.form{
+  position: relative;
+  top: 200px;
+}
+#Formbtn{
+/* position: relative;
+left: 220px; */
+align-items: flex-end;
+width: 200px;
+}
