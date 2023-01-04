@@ -57,182 +57,205 @@
   </a>
 </div> -->
 
-<div class="d-flex justify-content-center align-items-center" *ngFor="let product of httpMethods.productDetails">
-  <div class="card">
-    <li>{{product.title}}</li>
-    <!-- <img class="card-img-top" [src]={{product.image}} alt=""/> -->
+<!-- <div class="d-flex product" >
+<div class="justify-content-center" *ngFor="let product of httpMethods.productDetails">
+  <div class="card ">
+      <img src={{product.image}} alt="" class="card-img-top">
+      <div class="card-body ">
+         <h4 class="card-title"> {{product.title}}</h4>
+         <p class="card-text">{{product.description}}</p>
+         <h3 class="price mb-0 ">{{product.price|currency}}</h3> <br>
+         <span class="card-item">Ratings: {{product.rating}}</span>
+     </div>
   </div>
-
-
 </div>
-
+</div> -->
 <!-- Today's Deal -->
-<div class="multi-carousel" data-mdb-interval="3000" data-mdb-items="5">
-  <div class="d-flex justify-content-center m-2 mb-3">
-      <button class="carousel-control-prev btn btn-pink btn-floating mx-3" type="button" tabindex="0" data-mdb-slide="prev">
-          <i class="fas fa-angle-left fa-lg"></i>
-      </button>
-      <button class="carousel-control-next btn btn-pink btn-floating mx-3" type="button" tabindex="0" data-mdb-slide="next">
-          <i class="fas fa-angle-right fa-lg"></i>
-      </button>
+<div class="Home">
+<h3 class="heading">Deal's of the day</h3>
+<div class="d-flex product" >
+  <div class="justify-content-center" *ngFor="let product of httpMethods.productDetails">
+    <div class="card ">
+        <img src={{product.image}} alt="" class="card-img-top">
+        <div class="card-body ">
+          <span id="offer">Up to 30% off</span>
+           <h3 class="price mb-0 ">{{product.price|currency}}</h3> <br>
+           <small>Free Delivery</small>
+       </div>
+    </div>
   </div>
-  <div class="multi-carousel-inner">
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(4).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">Moda</h5>
-                  <p class="card-text">Plan B</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star-half-alt"></i></li>
-                  </ul>
-                  <p class="price mb-0">9,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(1).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">Indie City</h5>
-                  <p class="card-text">Pixies</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="far fa-star"></i></li>
-                  </ul>
-                  <p class="price mb-0">14,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(7).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">Year</h5>
-                  <p class="card-text">Indielectru</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="price mb-0">12,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(8).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">L'Hiver Indien</h5>
-                  <p class="card-text">Baloji</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star-half-alt"></i></li>
-                  </ul>
-                  <p class="price mb-0">10,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(6).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">Indie Funk</h5>
-                  <p class="card-text">Generation Funk</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="price mb-0">19,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(2).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">Rockferry</h5>
-                  <p class="card-text">Duffy</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star-half-alt"></i></li>
-                  </ul>
-                  <p class="price mb-0">17,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(3).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">Indie Pop</h5>
-                  <p class="card-text">Various artists</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="far fa-star"></i></li>
-                  </ul>
-                  <p class="price mb-0">9,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(5).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">Rock 'N' Roll</h5>
-                  <p class="card-text">Chuck Berry</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star-half-alt"></i></li>
-                  </ul>
-                  <p class="price mb-0">29,99 $</p>
-              </div>
-          </div>
-      </div>
-      <div class="multi-carousel-item">
-          <div class="card m-2">
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Square/img(9).jpg" alt="Card image cap" />
-              <div class="card-body">
-                  <h5 class="card-title">High Voltage</h5>
-                  <p class="card-text">AC/DC</p>
-                  <ul class="list-unstyled list-inline my-2">
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                      <li class="list-inline-item mx-0"><i class="fas fa-star"></i></li>
-                  </ul>
-                  <p class="price mb-0">24,99 $</p>
-              </div>
-          </div>
-      </div>
+
+  </div>
+
+  <br>
+
+<div class="applicants d-flex ">
+
+<div class="topPicks">
+<h4 class="heading">Top picks for your home</h4>
+<div class="box-container">
+  <div class="box">
+    <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-372x232----B08RDL6H79._SY232_CB667322346_.jpg" alt=""> <br>
+    <small>Air Conditioners</small>
+  </div>
+  <div class="box">
+    <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/B08345R1ZW---372x232._SY232_CB667322346_.jpg" alt=""> <br>
+    <small>Refrigerators</small>
   </div>
 </div>
+<div class="box-container">
+  <div class="box">
+    <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/B07G5J5FYP._SY232_CB667322346_.jpg" alt=""> <br>
+    <small>Microwaves</small>
+  </div>
+  <div class="box">
+    <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08CPQVLZT._SY232_CB667322346_.jpg" alt=""> <br>
+    <small>Washing Machine</small>
+  </div>
+</div>
+<a href="#">see more</a>
 
+</div>
+<!-- Upgrading Home  -->
+
+<div class="upgradeHome">
+  <h4 class="heading">Upgrade your home | Amazon Brands</h4>
+  <div class="box-container">
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img22/BAU/Oct/372X232_11._SY232_CB606110532_.jpg" alt=""> <br>
+      <small>Upto 60% off | LED Tvs</small>
+    </div>
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img22/PB/MSO/Dec/372X232_AC_Fridge._SY232_CB620369430_.jpg" alt=""> <br>
+      <small>Upto 60% off | Large Applicants</small>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img22/BAU/Oct/372X232_4._SY232_CB606110532_.jpg" alt=""> <br>
+      <small>Upto 60% off | Furniture</small>
+    </div>
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img22/BAU/Oct/372X232_2._SY232_CB606110532_.jpg" alt=""> <br>
+      <small>Upto 60% off | kitchen products</small>
+    </div>
+  </div>
+  <a href="#">see more</a>
+</div>
+<!-- Styling the gome  -->
+<div class="style">
+  <h4 class="heading">Revamp your home in style</h4>
+  <div class="box-container">
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_1_High._SY232_CB670263840_.jpg" alt=""> <br>
+      <small>Bedsheets & curtains</small>
+    </div>
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_2_High._SY232_CB670263840_.jpg" alt=""> <br>
+      <small>Home decoration</small>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_3_High._SY232_CB670263840_.jpg" alt=""> <br>
+      <small>Home storage</small>
+    </div>
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IMG20/Home/2021/GW/MSO/April/372x232_4_High._SY232_CB670263840_.jpg" alt=""> <br>
+      <small>Lighting Sounds</small>
+    </div>
+  </div>
+  <a href="#">see more</a>
+
+</div>
+</div>
+<br>
+
+<h3 class="heading ">Under ₹599 | Home & kitchen budget buys | Local shops</h3> <a href="#" class="d-flex ">See all</a>
+<div class="Budget">
+  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/516X+uXX2xL._AC_SY400_.jpg" alt="">
+  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/71nEPUH6CBS._AC_SY400_.jpg" alt="">
+  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/71jDgbvJQCL._AC_SY400_.jpg" alt="">
+  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/91CZqaO7BWL._AC_SY400_.jpg" alt="">
+  <img src="https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/61H7sr-PKSS._AC_SY400_.jpg" alt="">
+  <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/IN-hq/2019/img/Kitchen/XCM_Manual_372x232_1198417XCM_Manual_1198417__4_1573567224_jpg_LOWER_QL85_._SY232_CB448746407_.jpg" alt="">
+</div>
+<br>
+<div class="applicants d-flex pickcontainer">
+
+  <div class="topPicks">
+  <h4 class="heading">Top picks for your home</h4>
+  <div class="box-container">
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc_5._SY232_CB655805757_.jpg" alt=""> <br>
+      <small>Smartwatches</small>
+    </div>
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc0.5x_6._SY116_CB655805757_.jpg" alt=""> <br>
+      <small>Tablets</small>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc_7._SY232_CB655805757_.jpg" alt=""> <br>
+      <small>Laptops</small>
+    </div>
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img21/PC/Computers/GW/DBQC/D21343116_IN_CEPC_BAU_GW_graphics_March21_dbqc_8._SY232_CB655805757_.jpg" alt=""> <br>
+      <small>Monitors</small>
+    </div>
+  </div>
+  <a href="#">see more</a>
+
+  </div>
+  <!-- Upgrading Home  -->
+  <div class="box-container picks">
+      <h4 class="heading">Value Packs under ₹599 | Amazon Brands & more</h4>
+      <div class="box">
+        <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/Symbol/2021/wrs/mencombo_high._SY608_CB666769241_.jpg" alt=""> <br>
+
+      </div>
+    <a href="#">End of season sale</a>
+  </div>
+  <!-- Di 3 -->
+
+  <div class="box-container picks">
+    <h4 class="heading">New Series CRUSHED | Watch FREE on miniTV</h4>
+    <div class="box">
+      <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img17/Home/AmazonTV/Ravina/Desktop/DeskCC-758x608_CRUSHED-S2_V2_1._SY608_CB620412632_.jpg" alt=""> <br>
+      <h4>Watch For Free</h4>
+    </div>
+  <a href="#">Watch Now</a>
+</div>
+
+  <!-- Styling the gome  -->
+  <div class="style">
+    <h4 class="heading">Birthday store</h4>
+    <div class="box-container">
+      <div class="box">
+        <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img20/Events/GWBdaystore/Artboard_1QC2_2x._SY232_CB662999952_.jpg" alt=""> <br>
+        <small>Gifts for Men</small>
+      </div>
+      <div class="box">
+        <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img20/Events/GWBdaystore/Artboard_2QC2_2x._SY232_CB662999952_.jpg" alt=""> <br>
+        <small>gifts for Woman</small>
+      </div>
+    </div>
+    <div class="box-container">
+      <div class="box">
+        <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img20/Events/GWBdaystore/Artboard_3QC2_2x._SY232_CB662999952_.jpg" alt=""> <br>
+        <small>Gifts for boys</small>
+      </div>
+      <div class="box">
+        <img src="https://images-eu.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/31/img20/Events/GWBdaystore/Artboard_4QC2_1x._SY116_CB662999955_.jpg" alt=""> <br>
+        <small>Gifts for girls</small>
+      </div>
+    </div>
+    <a href="#">see more</a>
+
+  </div>
+  </div>
+</div>
   <router-outlet></router-outlet>
 
 

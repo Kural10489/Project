@@ -1,3 +1,9 @@
+body{
+  background-color: rgb(240, 241, 241);
+}
+.Home{
+  padding: 15px;
+}
 .nav{
   height: 70px;
 }
@@ -12,4 +18,68 @@
 }
 *{
   text-decoration:none;
+}
+/* .product{
+  width: 300px;
+  height: 300px;
+} */
+
+.card{
+  height: 250px;
+}
+.card img
+{
+  height: 120px;
+  width: 120px;
+}
+#offer{
+background-color: rgb(224, 20, 20);
+padding: 2px;
+border-radius: 3px;
+color: aliceblue;
+}
+.heading{
+  font-weight: 700;
+  text-align:center
+}
+.applicants{
+  padding: 3px;
+  margin-left: 15px;
+}
+.upgradeHome{
+  margin: 0px 30px;
+}
+.price{
+
+}
+.box-container{
+  display: flex;
+}
+.topPicks,.upgradeHome,.style{
+  border: .1px solid rgb(232, 232, 227);
+  padding: 5px;
+}
+.applicants img{
+width: 180px;
+margin: 5px;
+}
+.Budget{
+  display: flex;
+  padding: 10px;
+  border: .1px solid rgb(232, 232, 227);
+}
+.Budget img{
+  height: 200px;
+  width: 260px;
+}
+.pickcontainer{
+padding: 10px;
+border: .1px solid rgb(232, 232, 227);
+}
+.picks{
+
+flex-direction: column;
+}
+.picks img{
+  width: 300px;
 }
