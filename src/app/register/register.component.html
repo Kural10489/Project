@@ -1,3 +1,4 @@
+
 <div class="center">
 <div class="registerForm">
   <form class="shadow p-3 mb-5 bg-white rounded" [formGroup]="registrationForm" (ngSubmit)="createPost()">
@@ -34,11 +35,8 @@
 <small>By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Amazon. Message and data rates may apply.</small>
 </div>
 </div> <br>
-  <button type="submit" class="btn btn-warning">Countinue</button>
+  <button type="submit" class="btn btn-warning" (click)="onSignup()">Countinue</button>
 </form>
 </div>
 </div>
 
-<div *ngFor="let product of httpMethods.productDetails">
-  <div>{{product.title}}</div>
-  </div>

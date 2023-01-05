@@ -11,12 +11,16 @@ import { HttpService } from './services/http.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MensProductsComponent } from './mens-products/mens-products.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    NavbarComponent,
+    MensProductsComponent,
 
   ],
   imports: [

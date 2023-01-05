@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators,FormBuilder} from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { map } from 'rxjs';
 import { HttpService } from '../services/http.service';
 @Component({
@@ -11,8 +12,8 @@ import { HttpService } from '../services/http.service';
 export class RegisterComponent implements OnInit{
 
 
-  constructor(private fb:FormBuilder,private http:HttpClient,public httpMethods:HttpService){}
-  
+  constructor(private fb:FormBuilder,private http:HttpClient,public httpMethods:HttpService,private route:Router){}
+
   ngOnInit():void{
     this.httpMethods.getProductDetais();
   }
@@ -30,6 +31,11 @@ export class RegisterComponent implements OnInit{
     this.http.post('http://localhost:3000/user',postData).subscribe(response=>{console.log(response);
     });
 
+  }
+
+  onSignup(){
+
+      this.route.navigate(['']);
   }
 
 }

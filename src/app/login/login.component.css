@@ -2,7 +2,7 @@
 form{
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 28%;
   border: .1px solid rgb(226, 220, 220);
 }
 .form{
@@ -12,6 +12,19 @@ form{
 #Formbtn{
 /* position: relative;
 left: 220px; */
-align-items: flex-end;
-width: 200px;
+/* align-items: flex-end;
+width: 200px; */
+}
+
+.links a{
+margin: 13px;
+text-decoration: none;
+}
+.heading{
+  font-weight: 700;
+
+}
+.createBtn{
+  border: 0.1px solid rgb(218, 214, 214);
+  background-color: rgb(246, 247, 248);
 }
