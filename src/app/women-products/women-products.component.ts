@@ -4,11 +4,11 @@ import { cartService } from '../services/http.cart';
 import { HttpService } from '../services/http.service';
 
 @Component({
-  selector: 'app-mens-products',
-  templateUrl: './mens-products.component.html',
-  styleUrls: ['./mens-products.component.css']
+  selector: 'app-women-products',
+  templateUrl: './women-products.component.html',
+  styleUrls: ['./women-products.component.css']
 })
-export class MensProductsComponent {
+export class WomenProductsComponent {
   constructor(private http:HttpClient,public httpMethods:HttpService,private cart:cartService){}
 
   ngOnInit():void{

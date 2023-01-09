@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,12 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MensProductsComponent } from './mens-products/mens-products.component';
+import { CartComponent } from './cart/cart.component';
+import { cartService } from './services/http.cart';
+import { FilterPipe } from './pipes/filter.pipe';
+import { WomenProductsComponent } from './women-products/women-products.component';
+import { authenticateService } from './services/http.Authenticate';
+import { CheckoutComponent } from './checkout/checkout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +27,10 @@ import { MensProductsComponent } from './mens-products/mens-products.component';
     HomeComponent,
     NavbarComponent,
     MensProductsComponent,
+    CartComponent,
+    FilterPipe,
+    WomenProductsComponent,
+    CheckoutComponent,
 
   ],
   imports: [
@@ -30,7 +40,13 @@ import { MensProductsComponent } from './mens-products/mens-products.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HttpService],
+  providers: [HttpService,cartService,authenticateService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private auth:authenticateService){
+    console.log(this.auth.authenticate);
+  }
+
+
+ }

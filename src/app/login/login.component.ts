@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { authenticateService } from '../services/http.Authenticate';
 import { HttpService } from '../services/http.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   private password:any;
   public loginForm!:FormGroup;
 
-  constructor(private http:HttpClient,private httpMethod:HttpService,private form:FormBuilder,private route:Router){
+  constructor(private http:HttpClient,private httpMethod:HttpService,private form:FormBuilder,private route:Router,private auth:authenticateService){
     this.email=[];
     this.password=[];
   }
@@ -40,6 +41,8 @@ onLogin(){
    })
    if(user){
     alert('Login Sucess');
+    this.auth.login();
+
     this.route.navigate(['']);
    }
    else{

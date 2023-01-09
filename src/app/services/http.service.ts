@@ -1,5 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { JsonPipe } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,13 +16,14 @@ export class HttpService implements OnInit {
     this.getUserDetails();
     this.getAllMensProducts();
 
-   }
+  }
 
   ngOnInit(): void {
     this.productDetails=[];
     this.userDetails=[];
     this.mensProducts=[];
     this.getProductDetais();
+
   }
 
   getProductDetais(){
@@ -29,21 +32,21 @@ export class HttpService implements OnInit {
       console.log(result);
 
     })
-    }
-    getAllMensProducts(){
-      this.http.get<any>(`http://localhost:3000/products`).subscribe(result=>{
-        console.log(result);
-
-         this.mensProducts=result.filter((a:any)=>{
-           a.category=='M';
-           console.log(this.mensProducts);
-        })
+  }
+  getAllMensProducts(){
+    this.http.get<any>(`http://localhost:3000/products`).subscribe(result=>{
+      this.mensProducts=result.filter((a:any)=>{
+        return a.category=='M';
       })
+    })
+    // console.log(this.mensProducts);
 
     }
+
+
 
     getUserDetails(){
-      this.http.get(`http://localhost:3000/user`).subscribe((result:any)=>{
+      this.http.get(`http://localhost:3000/user`).subscribe(result=>{
         this.userDetails=result;
         console.log(result);
 

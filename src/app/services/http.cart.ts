@@ -9,17 +9,14 @@ export class cartService implements OnInit {
 
   public cartItemList:any=[];
   public productList=new BehaviorSubject<any>([]);
-  public totalItems:number=0;
+  public totalItems!:number;
+  public total=0;
 
   constructor(private http:HttpClient) {
     this.getProducts().subscribe(result=>{
       this.totalItems=result.length;
 
-    this.productList.forEach((a:any)=>{
-      console.log(a);
 
-      Object.assign(a,{quantity:1,total:a.price})
-    })
     })
 
   }
@@ -40,11 +37,16 @@ export class cartService implements OnInit {
   }
 
   getTotalPrice():number{
-    let total=0;
-    this.cartItemList.map((product:any)=>{
-      total=total+product.price;
+    // let total=0;
+
+    this.cartItemList.map((a:any)=>{
+      //console.log(product);
+
+      this.total+=a.price;
+      console.log(this.total);
+
     })
-    return total;
+    return this.total;
   }
 
   removeCartItem(product:any){
@@ -53,6 +55,7 @@ export class cartService implements OnInit {
         this.cartItemList.splice(index,1);
       }
     })
+    this.productList.next(this.cartItemList);
   }
 
   removeAllCartItems(){
