@@ -32,6 +32,7 @@ export class HttpService implements OnInit {
       console.log(result);
 
     })
+    
   }
   getAllMensProducts(){
     this.http.get<any>(`http://localhost:3000/products`).subscribe(result=>{

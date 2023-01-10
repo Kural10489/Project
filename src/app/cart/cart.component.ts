@@ -17,12 +17,12 @@ export class CartComponent implements OnInit {
   ngOnInit():void{
     this.cart.getProducts().subscribe(response=>{
       this.product=response;
-      this.total=this.cart.getTotalPrice();
+      this.total=this.cart.getTotalPrice() /2;
 
       this.cart.productList.forEach((a:any)=>{
         console.log(a.price);
 
-        Object.assign(a,{quantity:1,total:a.price});
+        // Object.assign(a,{quantity:1,total:a.price});
 
       })
 

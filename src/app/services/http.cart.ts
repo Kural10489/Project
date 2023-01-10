@@ -16,7 +16,6 @@ export class cartService implements OnInit {
     this.getProducts().subscribe(result=>{
       this.totalItems=result.length;
 
-
     })
 
   }
@@ -37,18 +36,15 @@ export class cartService implements OnInit {
   }
 
   getTotalPrice():number{
-    // let total=0;
 
     this.cartItemList.map((a:any)=>{
-      //console.log(product);
-
-      this.total+=a.price;
+      this.total+=a.price /2;
       console.log(this.total);
 
     })
-    return this.total;
-  }
+     return this.total;
 
+  }
   removeCartItem(product:any){
     this.cartItemList.map((currentProducts:any,index:any)=>{
       if(product.id===currentProducts.id){

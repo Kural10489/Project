@@ -6,6 +6,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MensProductsComponent } from './mens-products/mens-products.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { authenticateService } from './services/http.Authenticate';
 import { WomenProductsComponent } from './women-products/women-products.component';
@@ -22,7 +23,7 @@ const routes: Routes = [
     component:CheckoutComponent,
     canActivate:[authenticateService]
   },
-  {path:'**',component:LoginComponent},
+  {path:'**',component:NotFoundComponent},
 ];
 
 @NgModule({

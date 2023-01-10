@@ -8,9 +8,18 @@ import { cartService } from '../services/http.cart';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent{
-constructor(public cart:cartService,public route:Router){}
+
+  public searchTerm='';
+  constructor(public cart:cartService,public route:Router){
 
 
+  }
+
+  search(event:any){
+    this.searchTerm=(event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+
+  }
 navigateToCart(){
   this.route.navigate(['cart']);
 }

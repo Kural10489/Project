@@ -3,17 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { JsonPipe } from '@angular/common';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree,Router } from '@angular/router';
+import { UserService } from './user.service';
 @Injectable({
   providedIn: 'root'
 })
 export class authenticateService implements CanActivate {
-  authenticate!:boolean;
 
-  constructor(private route:Router){}
+
+  constructor(private route:Router ,private user:UserService){}
   canActivate(route: ActivatedRouteSnapshot,
      state: RouterStateSnapshot
      ): boolean | Observable<boolean> | Promise<boolean> {
-    if(this.authenticate){
+    if(this.user.authenticate){
       return true;
     }
     else{
@@ -25,11 +26,5 @@ export class authenticateService implements CanActivate {
 
 
 
-  login(){
-    this.authenticate=true;
-  }
-  loggedOut(){
-    this.authenticate=false;
-  }
 
 }

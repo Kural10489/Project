@@ -19,6 +19,9 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { WomenProductsComponent } from './women-products/women-products.component';
 import { authenticateService } from './services/http.Authenticate';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { UserService } from './services/user.service';
+import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FilterPipe,
     WomenProductsComponent,
     CheckoutComponent,
+    FooterComponent,
+    NotFoundComponent,
 
   ],
   imports: [
@@ -44,9 +49,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private auth:authenticateService){
-    console.log(this.auth.authenticate);
-  }
+  
 
 
  }
