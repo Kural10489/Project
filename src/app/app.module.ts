@@ -22,6 +22,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { UserService } from './services/user.service';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CommingsoonComponent } from './commingsoon/commingsoon.component';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CheckoutComponent,
     FooterComponent,
     NotFoundComponent,
+    CommingsoonComponent,
+    SearchComponent,
 
   ],
   imports: [

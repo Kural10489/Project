@@ -1,19 +1,29 @@
 import { Injectable } from '@angular/core';
-import { authenticateService } from './http.Authenticate';
-
+import { cartService } from './http.cart';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   authenticate!:boolean;
-  
-  constructor(private Auth:authenticateService) { }
+
+  constructor(private cart:cartService) { }
+
+isLogin=()=>{
+  if(this.getUserName()){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
 
-  login(){
-    this.authenticate=true;
-  }
-  loggedOut(){
-    this.authenticate=false;
-  }
+getUserName=()=>{
+  return localStorage.getItem('name');
+}
+logout(){
+  localStorage.clear();
+  this.cart.removeAllCartItems();
+}
+
 }

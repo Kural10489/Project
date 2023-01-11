@@ -10,7 +10,7 @@ nav a{
 .searchbtn{
   height: 40px;
   position: relative;
-  right: 234px;
+  right: 150px;
 }
 #nav2{
   background-color:#2c3339;
@@ -27,4 +27,7 @@ nav a{
 .user{
   position: relative;
   right: 100px;
+}
+.logout{
+  margin: 10px;
 }

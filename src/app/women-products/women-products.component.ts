@@ -16,6 +16,11 @@ export class WomenProductsComponent {
   public count=this.cart.totalItems;
   public product=[];
   public productidCheck=[];
+  public searchText:string='';
+  // new
+  public filter1:string=''
+  public filter2:string=''
+  public filter3:string=''
   constructor(private http:HttpClient,public httpMethods:HttpService,private cart:cartService){}
 
   ngOnInit():void{
@@ -43,8 +48,11 @@ export class WomenProductsComponent {
     this.count--;
 
   }
- 
-  // public Nav:NavbarComponent
+ onSearchText(searchValue:any){
+  this.searchText=searchValue;
+  console.log(this.searchText);
+
+ }
 
 
 

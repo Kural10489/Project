@@ -1,8 +1,20 @@
+<br>
+<app-search (onSearchTextEntered)="onSearchText($event)"></app-search>
 
-
+<div class="filter">
+  <h4>Filter Based On Rate</h4>
+<input type="checkbox" name="men" id="" >
+<label for="">Under {{500|currency:'INR':'symbol':"3.0"}}</label>
+<br>
+<input type="checkbox" name="woman" id="">
+<label for="">Under {{1000|currency:'INR':'symbol':"3.0"}}</label>
+<br>
+<input type="checkbox" name="price" id="">
+<label for="">Under {{2000|currency:'INR':'symbol':"3.0"}}</label>
+</div>
 <div class="container">
   <div class="row">
-    <ng-container  *ngFor="let product of httpMethods.productDetails|filter:'women':'category'">
+    <ng-container  *ngFor="let product of httpMethods.productDetails|filter:'women'&&'men':'category'">
       <!-- {{Nav.search}} -->
     <div class="card col-md-3">
       <img src="{{product.image}}" alt="">

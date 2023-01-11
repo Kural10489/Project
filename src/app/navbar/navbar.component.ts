@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { cartService } from '../services/http.cart';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,17 +10,17 @@ import { cartService } from '../services/http.cart';
 })
 export class NavbarComponent{
 
-  public searchTerm='';
-  constructor(public cart:cartService,public route:Router){
+  public enteredSearchValue:string='';
 
+  @Output()
+  public searchText:EventEmitter<string>=new EventEmitter<string>();
 
-  }
+  constructor(public cart:cartService,public route:Router,public user:UserService){}
 
-  search(event:any){
-    this.searchTerm=(event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
+onSearchText(){
+  this.searchText.emit(this.enteredSearchValue);
+}
 
-  }
 navigateToCart(){
   this.route.navigate(['cart']);
 }

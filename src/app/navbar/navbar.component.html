@@ -3,7 +3,7 @@
     <h2 style="color: aliceblue;">Amazon</h2>
 
 
-        <input type="search" id="form1" class="form-control search" placeholder="Search" [(ngModel)]="searchTerm" onkeyup="search($event)"/>
+        <input type="search" id="form1" class="form-control search" placeholder="Search" [(ngModel)]="enteredSearchValue" (input)="onSearchText()"/>
 
       <button type="button" class="btn btn-warning searchbtn">
         <span class="material-symbols-outlined">
@@ -12,8 +12,8 @@
       </button>
 
     <div class="d-flex align-items-center cart ">
-      <ng-container *ngIf="">
-        <span class="user">Hello,</span>
+      <ng-container *ngIf="user.getUserName()">
+        <span class="user">Hello,{{user.getUserName()}}</span>
       </ng-container>
       <div class="return">Returns &  <br> Orders</div>
 
@@ -21,7 +21,7 @@
       Cart
 
       <span style="font-size: 10px; " class="badge bg-danger">{{cart.totalItems}}</span>
-
+      <button *ngIf="user.getUserName()" class="btn btn-outline-danger logout" (click)="user.logout()">Logout</button>
     </div>
 
 
@@ -40,14 +40,14 @@
       <a class="nav-link" href="woman">woman</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Kids</a>
+      <a class="nav-link" href="kids">Kids</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Gift Cards</a>
+      <a class="nav-link" href="gift">Gift Cards</a>
     </li>
     <li>
-      <a href="#" class=" nav-link d-flex">Shop great deals now</a>
+      <a href="greatdeals" class=" nav-link d-flex">Shop great deals now</a>
     </li>
   </ul>
 </nav>
-{{searchTerm}}
+

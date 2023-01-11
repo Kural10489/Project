@@ -14,11 +14,13 @@ import { UserService } from '../services/user.service';
 export class LoginComponent implements OnInit {
   private email:any;
   private password:any;
+  private text:any;
   public loginForm!:FormGroup;
 
   public username='';
 
-  constructor(private http:HttpClient,private httpMethod:HttpService,private form:FormBuilder,private route:Router,private auth:authenticateService,private user:UserService){
+  constructor(private http:HttpClient,private httpMethod:HttpService,private form:FormBuilder,private route:Router){
+    this.text=[];
     this.email=[];
     this.password=[];
   }
@@ -26,26 +28,24 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm=this.form.group({
       email:[''],
-      password:['']
+      password:[''],
+      text:['']
     })
 
 }
 
 onLogin(){
-  // console.log(this.loginForm.value.password.find((a:any)=>a==='moni'));
 
-  // this.email=this.http.get(`http://localhost:3000/user`).subscribe(result=>{
-  //  const user=result.find((a:any)=>{
-  //   return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
-  //  })
    this.http.get<any>(`http://localhost:3000/user`).subscribe(result=>{
    const user=result.find((a:any)=>{
     return a.Email===this.loginForm.value.email && a.Password===this.loginForm.value.password
+
    })
    if(user){
     alert('Login Sucess');
-    this.user.login();
-    console.log(user);
+    // this.user.login();
+    localStorage.setItem('name',this.loginForm.value.text);
+    localStorage.setItem('password',this.loginForm.value.password);
     this.route.navigate(['']);
    }
    else{
@@ -56,3 +56,4 @@ onLogin(){
 }
 
 }
+//private user:UserService

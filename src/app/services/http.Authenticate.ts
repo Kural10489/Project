@@ -14,7 +14,7 @@ export class authenticateService implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot,
      state: RouterStateSnapshot
      ): boolean | Observable<boolean> | Promise<boolean> {
-    if(this.user.authenticate){
+    if(this.user.isLogin()){
       return true;
     }
     else{

@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<ng-container *ngIf="user.authenticate">
+<ng-container *ngIf="!user.getUserName()">
   <div class="row recommendaded ">
     <div class="col-12 heading signin"> <h4>Sign in for the  <br>
       best experience</h4> <br> <br>
@@ -44,26 +44,29 @@
   </div>
 </ng-container>
 
+<ng-container *ngIf="user.getUserName()">
+  <div class="row recommendaded ">
+    <div class="col-12 heading signin "> <h4>Hi {{user.getUserName()}}.. <br>
+     Greetings!</h4> <br>
+      <a class="btn btn-warning topbtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" routerLink="/login">Shop Now</a>
+    </div>
+    <div class="col-12">
+      <img src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/AmazonExports/Fuji/2020/October/Fuji_D2_45M_en_US_2x._CB418309979_.jpg" alt="">
+    </div>
+    <div class="col-8">
+        <h3>Now See Custemized <br>
+          recommendations</h3>
+    </div>
+
+  </div>
+</ng-container>
 
 </div>
 <!-- Today's Deal -->
 <div class="Home">
-<h3 class="heading">Deal's of the day</h3>
-<!-- <div class="d-flex justify-content-center product" >
-  <div class=" " *ngFor="let product of httpMethods.productDetails">
-    <div class="card scrollCard">
-        <img src={{product.image}} alt="" class="card-img-top">
-        <div class="card-body ">
-          <span id="offer">Up to 30% off</span>
-           <h3 class="price mb-0 ">{{product.price|currency:'INR'}}</h3> <br>
-           <small>Free Delivery</small>
-       </div>
-    </div>
-  </div>
-
-  </div> -->
-
   <br>
+<h3 class="heading">Deal's of the day</h3>
+<br>
 <div class="cardcontainer">
 <div class="applicants d-flex ">
 
