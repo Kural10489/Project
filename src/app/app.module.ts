@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { MensProductsComponent } from './mens-products/mens-products.component';
+
 import { HttpService } from './services/http.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MensProductsComponent } from './mens-products/mens-products.component';
 import { CartComponent } from './cart/cart.component';
 import { cartService } from './services/http.cart';
 import { FilterPipe } from './pipes/filter.pipe';
@@ -24,6 +25,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CommingsoonComponent } from './commingsoon/commingsoon.component';
 import { SearchComponent } from './search/search.component';
+import { KidsComponent } from './kids/kids.component';
+// import { PriceFilterPipe } from './pipes/price-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,8 @@ import { SearchComponent } from './search/search.component';
     NotFoundComponent,
     CommingsoonComponent,
     SearchComponent,
+    KidsComponent,
+    // PriceFilterPipe,
 
   ],
   imports: [
@@ -49,11 +54,11 @@ import { SearchComponent } from './search/search.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HttpService,cartService,authenticateService],
+  providers: [HttpService,cartService,authenticateService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
 
 
  }

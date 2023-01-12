@@ -10,15 +10,17 @@ import { UserService } from '../services/user.service';
 })
 export class NavbarComponent{
 
-  public enteredSearchValue:string='';
+  public searchTerm:string='';
 
   @Output()
   public searchText:EventEmitter<string>=new EventEmitter<string>();
 
   constructor(public cart:cartService,public route:Router,public user:UserService){}
 
-onSearchText(){
-  this.searchText.emit(this.enteredSearchValue);
+Search(event:any){
+this.searchTerm=(event.target as HTMLInputElement).value;
+console.log(this.searchTerm);
+this.cart.search.next(this.searchTerm);
 }
 
 navigateToCart(){

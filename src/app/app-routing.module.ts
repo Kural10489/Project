@@ -5,6 +5,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CommingsoonComponent } from './commingsoon/commingsoon.component';
 import { HomeComponent } from './home/home.component';
+import { KidsComponent } from './kids/kids.component';
 import { LoginComponent } from './login/login.component';
 import { MensProductsComponent } from './mens-products/mens-products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path:'signup',component:RegisterComponent},
   {path:'mens',component:MensProductsComponent},
   {path:'cart',component:CartComponent},
-  {path:'kids',component:CommingsoonComponent},
+  {path:'kids',component:KidsComponent},
   {path:'gift',component:CommingsoonComponent},
   {path:'greatdeals',component:CommingsoonComponent},
   {path:'woman',component:WomenProductsComponent},

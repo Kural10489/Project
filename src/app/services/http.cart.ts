@@ -9,6 +9,7 @@ export class cartService implements OnInit {
 
   public cartItemList:any=[];
   public productList=new BehaviorSubject<any>([]);
+  public search=new BehaviorSubject<string>('');
   public totalItems!:number;
   public total=0;
 

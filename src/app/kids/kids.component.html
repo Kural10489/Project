@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="row">
+    <ng-container  *ngFor="let product of httpMethods.productDetails|filter:'kids':'title'|filter:searchKey:'title'">
+      <!-- {{Nav.search}} -->
+    <div class="card col-md-3">
+      <img src="{{product.image}}" alt="">
+      <h5 class="productTitle">{{product.title}}</h5>
+      <p class="productDescribtion">{{product.description}}</p>
+      <p><strong>Price: </strong> {{product.price|currency:"INR"}}</p>
+
+        <button class="btn btn-warning"
+        *ngIf="count==0 || !addedToCart"
+        (click)="addToCart(product)">Add to cart</button>
+        <!-- *ngIf="(count>0||count==0) && product.id===productId" -->
+        <br>
+        <!-- <div class="add">
+          <button class="btn "(click)="removeCartItemCount(product)"  [disabled]="count<=0">-</button>
+          {{itemCount}}
+          <button class="btn "(click)="addToCartCount(product)"> +</button>
+        </div> -->
+
+        <br>
+      <div *ngIf="addedToCart && product.id===productId" >
+      <span class="material-symbols-outlined green">
+        check_circle
+        </span> Added to Cart
+     </div>
+    </div>
+
+  </ng-container>
+  </div>
+</div>

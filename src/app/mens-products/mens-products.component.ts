@@ -9,12 +9,18 @@ import { HttpService } from '../services/http.service';
   styleUrls: ['./mens-products.component.css']
 })
 export class MensProductsComponent {
+  public searchKey:string='';
+
+
   constructor(private http:HttpClient,public httpMethods:HttpService,private cart:cartService){}
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();
-this.cart.getTotalPrice();
+    this.cart.getTotalPrice();
 
+this.cart.search.subscribe(val=>{
+  this.searchKey=val;
+})
 
   }
 
