@@ -10,7 +10,8 @@ nav a{
 .searchbtn{
   height: 40px;
   position: relative;
-  right: 150px;
+  right: 250px;
+  top: 8px;
 }
 #nav2{
   background-color:#2c3339;

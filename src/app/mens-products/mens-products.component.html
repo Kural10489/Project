@@ -10,6 +10,12 @@
       <p class="productDescribtion">{{product.description}}</p>
       <p><strong>Price: </strong> {{product.price|currency:"INR"}}</p>
       <button class="btn btn-warning" (click)="addToCart(product)">Add to cart</button>
+      <br>
+      <div *ngIf="addedToCart && product.id===productId" >
+        <span class="material-symbols-outlined green">
+          check_circle
+          </span> Added to Cart
+       </div>
     </div>
   </ng-container>
   </div>

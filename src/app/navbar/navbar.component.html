@@ -4,13 +4,9 @@
 
 
         <input type="search" id="form1" class="form-control search" placeholder="Search" [(ngModel)]="searchText" (keyup)="Search($event)"/>
-
-      <button type="button" class="btn btn-warning searchbtn">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined searchbtn">
           search
           </span>
-      </button>
-
     <div class="d-flex align-items-center cart ">
       <ng-container *ngIf="user.getUserName()">
         <span class="user">Hello,{{user.getUserName()}}</span>
@@ -34,19 +30,19 @@
       <a class="nav-link active" routerLink="" routerLinkActive="Active">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="mens">Mens</a>
+      <a class="nav-link" routerLink="mens">Mens</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="woman">woman</a>
+      <a class="nav-link" routerLink="woman">woman</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="kids">Kids</a>
+      <a class="nav-link" routerLink="kids">Kids</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="gift">Gift Cards</a>
+      <a class="nav-link" routerLink="soon">Gift Cards</a>
     </li>
     <li>
-      <a href="greatdeals" class=" nav-link d-flex">Shop great deals now</a>
+      <a routerLink="soon" class=" nav-link d-flex">Shop great deals now</a>
     </li>
   </ul>
 </nav>

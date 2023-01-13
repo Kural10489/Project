@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'mens',component:MensProductsComponent},
   {path:'cart',component:CartComponent},
   {path:'kids',component:KidsComponent},
-  {path:'gift',component:CommingsoonComponent},
+  {path:'soon',component:CommingsoonComponent},
   {path:'greatdeals',component:CommingsoonComponent},
   {path:'woman',component:WomenProductsComponent},
   {

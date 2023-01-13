@@ -22,7 +22,7 @@ max-width: 100ch;
 }
 
 .green{
-  background-color: greenyellow;
+  background-color: rgb(2, 11, 25);
   color: aliceblue;
   border-radius: 10px;
 }

@@ -10,7 +10,8 @@ import { HttpService } from '../services/http.service';
 })
 export class MensProductsComponent {
   public searchKey:string='';
-
+  public addedToCart:boolean=false;
+  public productId!:number;
 
   constructor(private http:HttpClient,public httpMethods:HttpService,private cart:cartService){}
 
@@ -25,7 +26,8 @@ this.cart.search.subscribe(val=>{
   }
 
   addToCart(product:any){
-    console.log(product);
+    this.productId=product.id;
+    this.addedToCart=true;
     this.cart.addtoCart(product);
   }
 }

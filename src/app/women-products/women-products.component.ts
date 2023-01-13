@@ -79,12 +79,6 @@ export class WomenProductsComponent{
   //   this.itemCount--;
   // }
 
-//  onSearchText(searchValue:any){
-//   this.searchText=searchValue;
-//   console.log(this.searchText);
-//  }
-
-
 
 
 

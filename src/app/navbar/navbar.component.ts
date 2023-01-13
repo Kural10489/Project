@@ -19,7 +19,6 @@ export class NavbarComponent{
 
 Search(event:any){
 this.searchTerm=(event.target as HTMLInputElement).value;
-console.log(this.searchTerm);
 this.cart.search.next(this.searchTerm);
 }
 
