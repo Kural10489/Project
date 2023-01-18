@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators,FormBuilder} from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { map } from 'rxjs';
 import { HttpService } from '../services/http.service';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,7 +13,7 @@ import { HttpService } from '../services/http.service';
 export class RegisterComponent implements OnInit{
 
 
-  constructor(private fb:FormBuilder,private http:HttpClient,public httpMethods:HttpService,private route:Router){}
+  constructor(private fb:FormBuilder,private http:HttpClient,public httpMethods:HttpService,private route:Router,private user:UserService){}
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();
@@ -21,9 +22,9 @@ export class RegisterComponent implements OnInit{
   registrationForm=this.fb.group({
       firstName:new FormControl(null,Validators.required),
       lastName:new FormControl(null,Validators.required),
-      MobileNumber:new FormControl(null,Validators.required),
-      Email:new FormControl(null,Validators.required),
-      Password:new FormControl(null,Validators.required)
+      mobileNumber:new FormControl(null,Validators.required),
+      email:new FormControl(null,[Validators.required,Validators.email]),
+      password:new FormControl(null,[Validators.required,Validators.minLength(4)])
   });
 
   createPost(){

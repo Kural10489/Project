@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { cartService } from './http.cart';
 @Injectable({
@@ -5,8 +6,8 @@ import { cartService } from './http.cart';
 })
 export class UserService {
   authenticate!:boolean;
-
-  constructor(private cart:cartService) { }
+  server='http://localhost:3000/user';
+  constructor(private cart:cartService,private http:HttpClient) { }
 
 isLogin=()=>{
   if(this.getUserName()){
@@ -17,7 +18,12 @@ isLogin=()=>{
   }
 }
 
-
+existingUserDetails(){
+  return this.http.get<any>(`http://localhost:3000/user`);
+}
+userServer(){
+  return this.server;
+}
 getUserName=()=>{
   return localStorage.getItem('name');
 }

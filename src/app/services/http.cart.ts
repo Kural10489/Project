@@ -9,7 +9,7 @@ export class cartService implements OnInit {
 
   public cartItemList:any=[];
   public productList=new BehaviorSubject<any>([]);
-  public search=new BehaviorSubject<string>('');
+  public search=new BehaviorSubject<string>("");
   public totalItems!:number;
   public total=0;
 
@@ -21,10 +21,7 @@ export class cartService implements OnInit {
 
   }
 
-  ngOnInit(): void {
-
-
-  }
+  ngOnInit(): void {}
 
   getProducts(){
     return this.productList.asObservable();
@@ -40,7 +37,7 @@ export class cartService implements OnInit {
 
     this.cartItemList.map((a:any)=>{
       this.total+=a.price /2;
-      console.log(this.total);
+      
 
     })
      return this.total;

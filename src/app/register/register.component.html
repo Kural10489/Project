@@ -5,8 +5,8 @@
     <h3 class="fluid-container">Register</h3>
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" formControlName="firstName" placeholder="First name">
-        <small class="text-danger" *ngIf="registrationForm.get('firstName')?.invalid &&registrationForm.get('firstName')?.touched">*First name is mandatory</small>
+        <input type="text" class="form-control" formControlName="firstName" placeholder="First name" required>
+        <small class="text-danger" *ngIf="registrationForm.get('firstName')?.invalid &&registrationForm.get('firstName')?.touched">First name is mandatory</small>
     </div>
 
     <div class="col">
@@ -16,18 +16,24 @@
     </div> <br>
 
     <div> <br>
-      <input type="text" class="form-control" formControlName="MobileNumber" placeholder="Mobile Number" type="number">
-      <small class="help-text" *ngIf="registrationForm.get('MobileNumber')?.invalid &&registrationForm.get('MobileNumber')?.touched"></small>
+      <input type="text" class="form-control" formControlName="mobileNumber" placeholder="Mobile Number" type="number" pattern="[0-9]{10}">
+      <small class="text-danger" *ngIf="registrationForm.get('mobileNumber')?.touched &&! registrationForm.get('mobileNumber')?.dirty"> Mobile Number is Required</small>
+      <small class="text-danger" *ngIf="registrationForm.get('mobileNumber')?.invalid && registrationForm.get('mobileNumber')?.dirty">Mobile Number must be 10 digits</small>
+
 
       <div> <br>
-        <input type="text" class="form-control" formControlName="Email" placeholder="Email" type="email">
-        <small class="help-text" *ngIf="registrationForm.get('Email')?.invalid &&registrationForm.get('Email')?.touched"></small>
+        <input type="text" class="form-control" formControlName="email" placeholder="Email" type="email" required>
+        <small class="help-text" *ngIf="registrationForm.get('email')?.touched &&! registrationForm.get('email')?.dirty  " class="text-danger"> Email is required</small>
+        <small class="text-danger" *ngIf="registrationForm.get('email')?.touched && registrationForm.get('email')?.errors?.['email']">Email Must Start with A-z and should have @</small>
+
       </div>
 
 
       <div> <br>
-        <input type="text" class="form-control" formControlName="Password" placeholder="Password" type="password">
-        <small class="help-text" *ngIf="registrationForm.get('Password')?.invalid &&registrationForm.get('Password')?.touched"></small>
+        <input type="text" class="form-control" formControlName="password" placeholder="Password" type="password" pattern="[a-zA-Z0-9]{4,}">
+        <small class="text-danger" *ngIf="registrationForm.get('password')?.touched &&! registrationForm.get('password')?.dirty">Password is required</small>
+        <small class="text-danger" *ngIf="registrationForm.get('password')?.dirty&&registrationForm.get('password')?.errors?.['minlength']">Password should contain atleast 4 charecters</small>
+
       </div>
     </div>
 
@@ -35,7 +41,11 @@
 <small>By enrolling your mobile phone number, you consent to receive automated security notifications via text message from Amazon. Message and data rates may apply.</small>
 </div>
 </div> <br>
-  <button type="submit" class="btn btn-warning" (click)="onSignup()">Countinue</button>
+  <button type="submit" class="btn btn-warning" (click)="onSignup()"
+  [disabled]="registrationForm.untouched || registrationForm.invalid"
+
+
+  >Countinue</button>
 </form>
 </div>
 </div>

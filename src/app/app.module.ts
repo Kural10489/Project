@@ -24,9 +24,7 @@ import { UserService } from './services/user.service';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CommingsoonComponent } from './commingsoon/commingsoon.component';
-import { SearchComponent } from './search/search.component';
 import { KidsComponent } from './kids/kids.component';
-// import { PriceFilterPipe } from './pipes/price-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +40,8 @@ import { KidsComponent } from './kids/kids.component';
     FooterComponent,
     NotFoundComponent,
     CommingsoonComponent,
-    SearchComponent,
     KidsComponent,
-    // PriceFilterPipe,
+  
 
   ],
   imports: [

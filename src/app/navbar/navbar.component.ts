@@ -26,6 +26,8 @@ navigateToCart(){
   this.route.navigate(['cart']);
 }
 
+
+
 }
 
 

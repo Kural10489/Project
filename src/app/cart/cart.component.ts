@@ -19,12 +19,12 @@ export class CartComponent implements OnInit {
       this.product=response;
       this.total=this.cart.getTotalPrice() /2;
 
-      this.cart.productList.forEach((a:any)=>{
-        console.log(a.price);
+      // this.cart.productList.forEach((a:any)=>{
+      //   console.log(a.price);
 
-        // Object.assign(a,{quantity:1,total:a.price});
+      //   // Object.assign(a,{quantity:1,total:a.price});
 
-      })
+      // })
 
     })
   }

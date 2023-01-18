@@ -30,8 +30,24 @@
       "lastName": "karthi",
       "MobileNumber": "9080724529",
       "Email": "kural@gmail.com",
-      "Password": "moni",
+      "Password": "kural",
       "id": 2
+    },
+    {
+      "firstName": "Abinash",
+      "lastName": "Puniyamoorthy",
+      "mobileNumber": "9898562783",
+      "email": "Abi@gmail.com",
+      "password": "abii",
+      "id": 3
+    },
+    {
+      "firstName": "Abinash",
+      "lastName": "Puniyamoorthy",
+      "mobileNumber": "9898562783",
+      "email": "Abi@gmail.com",
+      "password": "abii",
+      "id": 4
     }
   ],
   "products": [
@@ -44,7 +60,6 @@
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "rating": 3.9
     },
-
     {
       "id": 3,
       "title": "Mens Cotton Jacket",
@@ -81,7 +96,6 @@
         "count": 400
       }
     },
-
     {
       "id": 16,
       "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
