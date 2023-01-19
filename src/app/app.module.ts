@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CommingsoonComponent } from './commingsoon/commingsoon.component';
 import { KidsComponent } from './kids/kids.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { KidsComponent } from './kids/kids.component';
     NotFoundComponent,
     CommingsoonComponent,
     KidsComponent,
-  
+
+
 
   ],
   imports: [

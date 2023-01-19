@@ -25,7 +25,7 @@ this.cart.search.subscribe(val=>{
 
   }
 
-  addToCart(product:any){
+  public addToCart(product:any){
     this.productId=product.id;
     this.addedToCart=true;
     this.cart.addtoCart(product);

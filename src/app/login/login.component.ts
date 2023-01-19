@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   private password:any;
   private text:any;
   public loginForm!:FormGroup;
-
   public username='';
 
   constructor(private http:HttpClient,private httpMethod:HttpService,private form:FormBuilder,private route:Router,private user:UserService){
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit {
 
 }
 
-onLogin(){
+public onLogin(){
 
    this.user.existingUserDetails().subscribe(result=>{
    const user=result.find((a:any)=>{

@@ -9,7 +9,7 @@ export class UserService {
   server='http://localhost:3000/user';
   constructor(private cart:cartService,private http:HttpClient) { }
 
-isLogin=()=>{
+public isLogin=()=>{
   if(this.getUserName()){
     return true;
   }
@@ -18,16 +18,16 @@ isLogin=()=>{
   }
 }
 
-existingUserDetails(){
+public existingUserDetails(){
   return this.http.get<any>(`http://localhost:3000/user`);
 }
-userServer(){
+public userServer(){
   return this.server;
 }
-getUserName=()=>{
+public getUserName=()=>{
   return localStorage.getItem('name');
 }
-logout(){
+public logout(){
   localStorage.clear();
   this.cart.removeAllCartItems();
 }

@@ -17,26 +17,18 @@ export class CartComponent implements OnInit {
   ngOnInit():void{
     this.cart.getProducts().subscribe(response=>{
       this.product=response;
-      this.total=this.cart.getTotalPrice() /2;
-
-      // this.cart.productList.forEach((a:any)=>{
-      //   console.log(a.price);
-
-      //   // Object.assign(a,{quantity:1,total:a.price});
-
-      // })
-
+      this.total=this.cart.getTotalPrice()/2;
     })
   }
 
-  removeCartItem(item:any){
+public removeCartItem(item:any){
     this.cart.removeCartItem(item);
   }
-  emptyCart(){
+public emptyCart(){
     this.cart.removeAllCartItems();
 
   }
-  navigateToCheckout(){
+public navigateToCheckout(){
     this.route.navigate(['checkout'])
   }
 }

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './services/http.service';
 
@@ -9,7 +8,7 @@ import { HttpService } from './services/http.service';
 })
 export class AppComponent implements OnInit {
   title = 'Project';
-constructor(private http:HttpClient,public httpMethods:HttpService){}
+constructor(public httpMethods:HttpService){}
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();

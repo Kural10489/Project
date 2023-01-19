@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { UserService } from '../services/user.service';
@@ -9,12 +8,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private http:HttpClient,public httpMethods:HttpService,public user:UserService){}
-
-  ngOnInit():void{
-    this.httpMethods.getProductDetais();
-  }
+  constructor(public user:UserService){}
 }
 
 
-// public user:UserService

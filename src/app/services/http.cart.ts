@@ -23,27 +23,27 @@ export class cartService implements OnInit {
 
   ngOnInit(): void {}
 
-  getProducts(){
+public getProducts(){
     return this.productList.asObservable();
   }
 
-  addtoCart(product:any){
+public addtoCart(product:any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
   }
 
-  getTotalPrice():number{
+public getTotalPrice():number{
 
     this.cartItemList.map((a:any)=>{
       this.total+=a.price /2;
-      
+
 
     })
      return this.total;
 
   }
-  removeCartItem(product:any){
+public removeCartItem(product:any){
     this.cartItemList.map((currentProducts:any,index:any)=>{
       if(product.id===currentProducts.id){
         this.cartItemList.splice(index,1);
@@ -52,7 +52,7 @@ export class cartService implements OnInit {
     this.productList.next(this.cartItemList);
   }
 
-  removeAllCartItems(){
+public removeAllCartItems(){
     this.cartItemList=[];
     this.productList.next(this.cartItemList);
   }

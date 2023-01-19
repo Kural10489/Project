@@ -12,21 +12,21 @@ export class NavbarComponent{
 
   public searchTerm:string='';
 
-  @Output()
-  public searchText:EventEmitter<string>=new EventEmitter<string>();
-
   constructor(public cart:cartService,public route:Router,public user:UserService){}
 
-Search(event:any){
-this.searchTerm=(event.target as HTMLInputElement).value;
-this.cart.search.next(this.searchTerm);
-}
+/*search() has a parameter event used to target the
+  input value by the user and send the data to another component by
+  using the search method in service which has behavior subject
 
-navigateToCart(){
-  this.route.navigate(['cart']);
-}
+*/
+public search(event:any){
+  this.searchTerm=(event.target as HTMLInputElement).value;
+  this.cart.search.next(this.searchTerm);
+  }
 
-
+public navigateToCart(){
+    this.route.navigate(['cart']);
+  }
 
 }
 

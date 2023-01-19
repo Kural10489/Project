@@ -16,7 +16,7 @@ export class KidsComponent {
   public productidCheck=[];
   // search
   public searchKey:string='';
-  
+
   constructor(private http:HttpClient,public httpMethods:HttpService,private cart:cartService){}
 
   ngOnInit():void{
@@ -28,14 +28,12 @@ export class KidsComponent {
     })
 
   }
-  addToCart(product:any){
-    //  this.countIncrement();
+ public addToCart(product:any){
     this.productId=product.id;
     this.addedToCart=true;
     this.cart.addtoCart(product);
   }
-  removeCartItem(item:any){
-    // this.countDecrement();
+ public removeCartItem(item:any){
     this.cart.removeCartItem(item);
   }
 }
