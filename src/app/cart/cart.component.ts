@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   ngOnInit():void{
     this.cart.getProducts().subscribe(response=>{
       this.product=response;
-      this.total=this.cart.getTotalPrice()/2;
+      // this.total=this.cart.getTotalPrice()/2;
     })
   }
 

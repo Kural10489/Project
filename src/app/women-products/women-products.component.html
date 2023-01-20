@@ -1,31 +1,4 @@
 <br>
-<!-- <app-search (onSearchTextEntered)="onSearchText($event)"></app-search>
-{{priceModel|json}}
-<div class="filtercontainer">
-  <div class="filter">
-    <h4>Filter Based On Rate</h4>
-    <form action="" #formdata="ngForm">
-      <input type="checkbox" name="priceUnder500" id="" #priceUnder500 [(ngModel)]="priceModel.priceUnder500">
-<label for="">Under {{500|currency:'INR':'symbol':"3.0"}}</label>
-<br>
-<input type="checkbox" name="priceUnder1000" id="" [(ngModel)]="priceModel.priceUnder1000">
-<label for="">Under {{1000|currency:'INR':'symbol':"3.0"}}</label>
-<br>
-<input type="checkbox" name="priceUnder2000" id="" [(ngModel)]="priceModel.priceUnder2000">
-<label for="">Under {{2000|currency:'INR':'symbol':"3.0"}}</label>
-<br>
-<input type="checkbox" name="priceUnder1000" id="" [(ngModel)]="priceModel.priceUnder5000">
-<label for="">Under {{5000|currency:'INR':'symbol':"3.0"}}</label>
-<br>
-<input type="checkbox" name="priceUnder1000" id="" [(ngModel)]="priceModel.priceUnder10000">
-<label for="">Under {{10000|currency:'INR':'symbol':"3.0"}}</label>
-<br>
-</form>
-</div>
-</div>
- -->
-
-
 
 <div class="container">
   <div class="row">
@@ -36,20 +9,26 @@
       <h5 class="productTitle">{{product.title}}</h5>
       <p class="productDescribtion">{{product.description}}</p>
       <p><strong>Price: </strong> {{product.price|currency:"INR"}}</p>
+<div *ngIf="product.Quantity==0 || !cart.addedToCart">
+  <button class="btn btn-warning cartbtn"(click)="addToCart(product)">Add to cart</button>
 
-        <button class="btn btn-warning"
-        *ngIf="count==0 || !addedToCart"
-        (click)="addToCart(product)">Add to cart</button>
-        <!-- *ngIf="(count>0||count==0) && product.id===productId" -->
-        <br>
-        <!-- <div class="add">
-          <button class="btn "(click)="removeCartItemCount(product)"  [disabled]="count<=0">-</button>
-          {{itemCount}}
+</div>
+
+        <div *ngIf="(product.Quantity>0|| cart.addedToCart) &&  product.id===cart.productId ||cart.addedToCart">
+ <br>
+        <div class="add">
+          <button class="btn "(click)="removeCartItemCount(product)" [disabled]="product.Quantity<=0">-</button>
+          {{product.Quantity}}
           <button class="btn "(click)="addToCartCount(product)"> +</button>
-        </div> -->
+        </div>
+    </div>
+
+
 
         <br>
-      <div *ngIf="addedToCart && product.id===productId" >
+      <!-- <div *ngIf="(cart.addedToCart  && product.id===cart.productId)||cart.addedToCart" > -->
+      <div *ngIf="(cart.productIdCheck(product.id) && cart.addedToCart)" >
+
       <span class="material-symbols-outlined green">
         check_circle
         </span> Added to Cart

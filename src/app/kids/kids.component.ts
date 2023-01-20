@@ -21,7 +21,7 @@ export class KidsComponent {
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();
-    this.cart.getTotalPrice();
+    // this.cart.getTotalPrice();
 
     this.cart.search.subscribe(val=>{
       this.searchKey=val;
@@ -31,6 +31,7 @@ export class KidsComponent {
  public addToCart(product:any){
     this.productId=product.id;
     this.addedToCart=true;
+    this.cart.totalCost.push(product.price);
     this.cart.addtoCart(product);
   }
  public removeCartItem(item:any){

@@ -8,7 +8,9 @@ import { HttpService } from './services/http.service';
 })
 export class AppComponent implements OnInit {
   title = 'Project';
-constructor(public httpMethods:HttpService){}
+constructor(public httpMethods:HttpService){
+
+}
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();

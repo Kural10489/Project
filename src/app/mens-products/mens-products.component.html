@@ -10,8 +10,18 @@
       <p class="productDescribtion">{{product.description}}</p>
       <p><strong>Price: </strong> {{product.price|currency:"INR"}}</p>
       <button class="btn btn-warning" (click)="addToCart(product)">Add to cart</button>
+
+      <div *ngIf="(product.Quantity>0|| cart.addedToCart) &&  product.id===cart.productId ||cart.addedToCart">
+        <br>
+               <div class="add">
+                 <button class="btn "(click)="removeCartItemCount(product)" [disabled]="product.Quantity<=0">-</button>
+                 {{product.Quantity}}
+                 <button class="btn "(click)="addToCartCount(product)"> +</button>
+               </div>
+           </div>
+
       <br>
-      <div *ngIf="addedToCart && product.id===productId" >
+      <div *ngIf="(cart.productIdCheck(product.id))" >
         <span class="material-symbols-outlined green">
           check_circle
           </span> Added to Cart

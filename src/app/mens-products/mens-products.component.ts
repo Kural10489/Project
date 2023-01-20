@@ -11,13 +11,13 @@ import { HttpService } from '../services/http.service';
 export class MensProductsComponent {
   public searchKey:string='';
   public addedToCart:boolean=false;
-  public productId!:number;
 
-  constructor(private http:HttpClient,public httpMethods:HttpService,private cart:cartService){}
+
+  constructor(private http:HttpClient,public httpMethods:HttpService,public cart:cartService){}
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();
-    this.cart.getTotalPrice();
+    // this.cart.getTotalPrice();
 
 this.cart.search.subscribe(val=>{
   this.searchKey=val;
@@ -26,8 +26,37 @@ this.cart.search.subscribe(val=>{
   }
 
   public addToCart(product:any){
-    this.productId=product.id;
-    this.addedToCart=true;
+    this.cart.productId=product.id;
+    product.Quantity++;
+    this.cart.productIds.push(product.id);
+    // this.cart.totalCost.add(product.price);
+    this.cart.totalCost.push(product.price);
+    this.cart.addedToCart=true;
     this.cart.addtoCart(product);
+  }
+
+  removeCartItemCount(product:any){
+    this.cart.removeCartItem(product);
+    this.addedToCartToggle();
+    // this.cart.productIds.splice(product.id,1);
+    this.cart.productIds.shift();
+    this.countDecrease(product);
+  }
+  addToCartCount(product:any){
+    this.cart.addtoCart(product);
+    this.cart.totalCost.push(product.price);
+    this.countIncrease(product);
+  }
+
+  countIncrease(product:any){
+    product.Quantity=product.Quantity+1
+
+  }
+  countDecrease(product:any){
+    product.Quantity=product.Quantity-1
+
+  }
+  addedToCartToggle(){
+    this.cart.addedToCart=!this.cart.addedToCart;
   }
 }
