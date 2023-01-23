@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { cartService } from '../services/http.cart';
@@ -13,12 +14,12 @@ export class CartComponent implements OnInit {
   public total!:number;
 
 
-  constructor(public cart:cartService,private route:Router){}
+  constructor(public cart:cartService,private route:Router,private http:HttpClient){}
   ngOnInit():void{
     this.cart.getProducts().subscribe(response=>{
       this.product=response;
-      // this.total=this.cart.getTotalPrice()/2;
     })
+
   }
 
 public removeCartItem(item:any){
@@ -29,6 +30,10 @@ public emptyCart(){
 
   }
 public navigateToCheckout(){
+    const post=this.http.post(' http://localhost:3000/Orders',this.product)
+    post.subscribe();
+    console.log(this.product);
+
     this.route.navigate(['checkout'])
   }
 }

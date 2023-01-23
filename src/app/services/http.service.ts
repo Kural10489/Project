@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService implements OnInit {
  public productDetails:any;
  public userDetails:any;
+ public DispatchProductsDetails:any;
 
   constructor(private http:HttpClient) {}
 
@@ -13,8 +14,9 @@ export class HttpService implements OnInit {
     this.getUserDetails();
     this.productDetails=[];
     this.userDetails=[];
+    this.DispatchProductsDetails=[];
     this.getProductDetais();
-
+    this.getDispatchProductDetails();
   }
 //getProductDetais()is to get all the products from the server
   getProductDetais(){
@@ -24,6 +26,13 @@ export class HttpService implements OnInit {
     })
 
   }
+
+  getDispatchProductDetails(){
+    return this.http.get<any>(`http://localhost:3000/Orders`).subscribe((result:any)=>{
+    this.DispatchProductsDetails=result;
+    });
+  }
+
 //getUserDetails()is to get all details of user from the server
     getUserDetails(){
       this.http.get(`http://localhost:3000/user`).subscribe(result=>{
@@ -32,4 +41,6 @@ export class HttpService implements OnInit {
 
       })
     }
+
+   
 }

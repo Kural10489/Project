@@ -25,4 +25,29 @@ public addToCart(product:any){
   this.addedToCart=true;
   this.cart.addtoCart(product);
 }
+
+public removeCartItemCount(product:any){
+  this.cart.removeCartItem(product);
+  this.addedToCartToggle();
+  // this.cart.productIds.splice(product.id,1);
+  this.cart.productIds.shift();
+  this.countDecrease(product);
+}
+public addToCartCount(product:any){
+  this.cart.addtoCart(product);
+  this.cart.totalCost.push(product.price);
+  this.countIncrease(product);
+}
+public countIncrease(product:any){
+  product.Quantity=product.Quantity+1
+
+}
+public countDecrease(product:any){
+  product.Quantity=product.Quantity-1
+
+}
+public addedToCartToggle(){
+  this.cart.addedToCart=!this.cart.addedToCart;
+}
+
 }

@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { authenticateService } from '../services/http.Authenticate';
 import { HttpService } from '../services/http.service';
 import { UserService } from '../services/user.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +17,8 @@ export class LoginComponent implements OnInit {
   public loginForm!:FormGroup;
   public username='';
 
-  constructor(private http:HttpClient,private httpMethod:HttpService,private form:FormBuilder,private route:Router,private user:UserService){
+  constructor(private http:HttpClient,private httpMethod:HttpService,private form:FormBuilder,private route:Router
+    ,private user:UserService){
     this.text=[];
     this.email=[];
     this.password=[];
@@ -41,7 +41,8 @@ public onLogin(){
 
    })
    if(user){
-    alert('Login Sucess');
+    alert("login Sucess");
+    // this.SnackBar.open('Login Sucess','',{duration:4000, verticalPosition:'top',panelClass:['snackBar']});
     localStorage.setItem('name',this.loginForm.value.text);
     localStorage.setItem('password',this.loginForm.value.password);
     this.route.navigate(['']);

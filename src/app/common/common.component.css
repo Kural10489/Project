@@ -49,9 +49,10 @@ left: 80px;
   width: 200px;
 }
 
-.filtercontainer{
+/* .container{
   display: flex;
-}
+  flex-direction: row;
+} */
 .filter input,.filter label,.filter h4{
   position: relative;
   top: 30px;

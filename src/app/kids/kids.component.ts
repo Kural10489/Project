@@ -9,11 +9,6 @@ import { HttpService } from '../services/http.service';
   styleUrls: ['./kids.component.css']
 })
 export class KidsComponent {
-  public addedToCart:boolean=false;
-  public productId!:number;
-  public count=this.cart.totalItems;
-  public product=[];
-  public productidCheck=[];
   // search
   public searchKey:string='';
 
@@ -21,21 +16,11 @@ export class KidsComponent {
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();
-    // this.cart.getTotalPrice();
 
     this.cart.search.subscribe(val=>{
       this.searchKey=val;
     })
 
-  }
- public addToCart(product:any){
-    this.productId=product.id;
-    this.addedToCart=true;
-    this.cart.totalCost.push(product.price);
-    this.cart.addtoCart(product);
-  }
- public removeCartItem(item:any){
-    this.cart.removeCartItem(item);
   }
 }
 

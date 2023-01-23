@@ -10,7 +10,6 @@ import { HttpService } from '../services/http.service';
 })
 export class MensProductsComponent {
   public searchKey:string='';
-  public addedToCart:boolean=false;
 
 
   constructor(private http:HttpClient,public httpMethods:HttpService,public cart:cartService){}
@@ -35,28 +34,28 @@ this.cart.search.subscribe(val=>{
     this.cart.addtoCart(product);
   }
 
-  removeCartItemCount(product:any){
+  public removeCartItemCount(product:any){
     this.cart.removeCartItem(product);
     this.addedToCartToggle();
     // this.cart.productIds.splice(product.id,1);
     this.cart.productIds.shift();
     this.countDecrease(product);
   }
-  addToCartCount(product:any){
+  public addToCartCount(product:any){
     this.cart.addtoCart(product);
     this.cart.totalCost.push(product.price);
     this.countIncrease(product);
   }
 
-  countIncrease(product:any){
+  public countIncrease(product:any){
     product.Quantity=product.Quantity+1
 
   }
-  countDecrease(product:any){
+  public countDecrease(product:any){
     product.Quantity=product.Quantity-1
 
   }
-  addedToCartToggle(){
+  public addedToCartToggle(){
     this.cart.addedToCart=!this.cart.addedToCart;
   }
 }

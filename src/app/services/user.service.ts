@@ -30,6 +30,7 @@ public getUserName=()=>{
 public logout(){
   localStorage.clear();
   this.cart.removeAllCartItems();
+  this.http.delete('http://localhost:3000/Orders').subscribe();
 }
 
 }

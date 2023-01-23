@@ -1,32 +1,26 @@
-<div class="container">
-  <div class="row">
-    <ng-container>
-      <!-- {{Nav.search}} -->
-    <div class="card col-md-3">
-      <img src="{{products.image}}" alt="">
-      <h5 class="productTitle">{{products.title}}</h5>
-      <p class="productDescribtion">{{products.description}}</p>
-      <p><strong>Price: </strong> {{products.price|currency:"INR"}}</p>
 
-        <button class="btn btn-warning"
-        *ngIf="count==0 || !addedToCart"
-        (click)="addToCart(products)">Add to cart</button>
-        <!-- *ngIf="(count>0||count==0) && product.id===productId" -->
-        <br>
-        <!-- <div class="add">
-          <button class="btn "(click)="removeCartItemCount(product)"  [disabled]="count<=0">-</button>
-          {{itemCount}}
-          <button class="btn "(click)="addToCartCount(product)"> +</button>
-        </div> -->
+      <div class="card ">
+        <img src="{{products.image}}" alt="">
+        <h5 class="productTitle">{{products.title}}</h5>
+        <p class="productDescribtion">{{products.description}}</p>
+        <p><strong>Price: </strong> {{products.price|currency:"INR"}}</p>
+        <button class="btn btn-warning" (click)="addToCart(products)">Add to cart</button>
+
+        <div *ngIf="(products.Quantity>0|| cart.addedToCart) &&  products.id===cart.productId ||cart.addedToCart">
+          <br>
+                 <div class="add">
+                   <button class="btn "(click)="removeCartItemCount(products)" [disabled]="products.Quantity<=0">-</button>
+                   {{products.Quantity}}
+                   <button class="btn "(click)="addToCartCount(products)"> +</button>
+                 </div>
+             </div>
 
         <br>
-      <div *ngIf="addedToCart && products.id===productId" >
-      <span class="material-symbols-outlined green">
-        check_circle
-        </span> Added to Cart
-     </div>
-    </div>
+        <div *ngIf="(cart.productIdCheck(products.id))" >
+          <span class="material-symbols-outlined green">
+            check_circle
+            </span> Added to Cart
+         </div>
+      </div>
 
-  </ng-container>
-  </div>
-</div>
+
