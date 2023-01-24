@@ -1,7 +1,4 @@
-.center{
-  /* display: flex;
-  justify-content: center; */
-}
+
 .title{
   position: relative;
   left:350px ;
@@ -40,4 +37,13 @@ left: 240px;
 #order{
   position: relative;
   left: 150px;
+}
+.msg{
+  display: flex;
+
+}
+.msg span{
+  position: relative;
+  left: 140px;
+  margin-left: 40px;
 }

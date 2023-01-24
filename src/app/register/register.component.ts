@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators,FormBuilder} from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { cartService } from '../services/http.cart';
 import { HttpService } from '../services/http.service';
 import { UserService } from '../services/user.service';
 @Component({
@@ -12,7 +13,8 @@ import { UserService } from '../services/user.service';
 export class RegisterComponent implements OnInit{
 
 
-  constructor(private fb:FormBuilder,private http:HttpClient,public httpMethods:HttpService,private route:Router,private user:UserService){}
+  constructor(private fb:FormBuilder,private http:HttpClient,public httpMethods:HttpService,
+    private route:Router,private user:UserService,private cart:cartService){}
 
   ngOnInit():void{
     this.httpMethods.getProductDetais();
@@ -28,7 +30,7 @@ export class RegisterComponent implements OnInit{
 
 public createPost(){
     const postData=this.registrationForm.value;
-    this.http.post('http://localhost:3000/user',postData).subscribe(response=>{console.log(response);
+    this.http.post(this.cart.baseUrl+'/user',postData).subscribe(response=>{console.log(response);
     });
 
   }

@@ -30,10 +30,10 @@ public emptyCart(){
 
   }
 public navigateToCheckout(){
-    const post=this.http.post(' http://localhost:3000/Orders',this.product)
+    const post=this.http.post(this.cart.baseUrl +"/Orders",this.product)
     post.subscribe();
     console.log(this.product);
-
     this.route.navigate(['checkout'])
   }
+
 }

@@ -1,6 +1,6 @@
 
       <div class="card ">
-        <img src="{{products.image}}" alt="">
+        <img [src]="products.image" alt="">
         <h5 class="productTitle">{{products.title}}</h5>
         <p class="productDescribtion">{{products.description}}</p>
         <p><strong>Price: </strong> {{products.price|currency:"INR"}}</p>

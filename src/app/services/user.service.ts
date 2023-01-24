@@ -21,6 +21,7 @@ public isLogin=()=>{
 public existingUserDetails(){
   return this.http.get<any>(`http://localhost:3000/user`);
 }
+
 public userServer(){
   return this.server;
 }
@@ -30,7 +31,12 @@ public getUserName=()=>{
 public logout(){
   localStorage.clear();
   this.cart.removeAllCartItems();
-  this.http.delete('http://localhost:3000/Orders').subscribe();
-}
+  // this.http.delete('http://localhost:3000/Orders').subscribe();
+  this.deleteAllOrders();
 
+}
+public deleteAllOrders(){
+  console.log(this.cart.baseUrl+'/Orders'+this.cart.productIds);
+  return this.http.delete(this.cart.baseUrl+'/Orders'+this.cart.productIds)
+}
 }

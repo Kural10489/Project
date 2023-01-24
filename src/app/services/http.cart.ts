@@ -16,7 +16,7 @@ export class cartService implements OnInit {
   public addedToCart:boolean=false;
   public total=0;
   public totalCost:number[]=[];
-
+  baseUrl ="http://localhost:3000";
   constructor(private http:HttpClient) {
     this.getProducts().subscribe(result=>{
       this.totalItems=result.length;

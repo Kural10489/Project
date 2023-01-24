@@ -16,6 +16,9 @@ nav a{
 #nav2{
   background-color:#2c3339;
 }
+#orders{
+  text-decoration: none;
+}
 .cart{
 
   color: aliceblue;
