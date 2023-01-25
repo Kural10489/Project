@@ -12,12 +12,14 @@ export class CartComponent implements OnInit {
 
   public product:any=[];
   public total!:number;
-
-
+  public cartProducts=[this.cart.products];
+  public productTitle=this.cartProducts.map(a=>a);
   constructor(public cart:cartService,private route:Router,private http:HttpClient){}
   ngOnInit():void{
     this.cart.getProducts().subscribe(response=>{
       this.product=response;
+      console.log(this.cartProducts);
+
     })
 
   }

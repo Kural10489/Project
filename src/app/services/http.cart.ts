@@ -13,21 +13,26 @@ export class cartService implements OnInit {
   public totalItems!:number;
   public productId!:number;
   public productIds:number[]=[];
+  public products=[]
   public addedToCart:boolean=false;
   public total=0;
   public totalCost:number[]=[];
   baseUrl ="http://localhost:3000";
+
   constructor(private http:HttpClient) {
     this.getProducts().subscribe(result=>{
       this.totalItems=result.length;
       console.log(this.addedToCart);
       console.log(this.productIds);
-
+      this.products=JSON.parse(localStorage.getItem('products')||'{}');
+      // if(this.products) this.productList.next(this.products)
     });
 
   }
 
   ngOnInit(): void {}
+
+
 
 public getProducts(){
     return this.productList.asObservable();
@@ -36,17 +41,10 @@ public getProducts(){
 public addtoCart(product:any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
-    // this.getTotalPrice();
+
   }
 
-// public getTotalPrice():number{
 
-//     this.cartItemList.map((a:any)=>{
-//       this.total+=a.price /4;
-//     })
-//      return this.total;
-
-//   }
 public getTotalPrice(){
   return this.totalCost.reduce((a,b)=>a+b)
 }

@@ -32,6 +32,8 @@ this.cart.search.subscribe(val=>{
     this.cart.totalCost.push(product.price);
     this.cart.addedToCart=true;
     this.cart.addtoCart(product);
+    // this.cart.products=this.cart.products+product;
+    localStorage.setItem('products',JSON.stringify(this.cart.products));
   }
 
   public removeCartItemCount(product:any){
